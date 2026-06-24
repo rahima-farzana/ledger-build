@@ -102,7 +102,7 @@ jobs:
         continue-on-error: true
         if: github.ref == 'refs/heads/main'
         env:
-          SONAR_TOKEN: ${{ 49da8747919d009e2c1bae96358b15ef8aa8721c }}
+          SONAR_TOKEN: ${{secrets.sonarcloud}}
         run: |
           mvn sonar:sonar \
             -Dsonar.projectKey=wezva-fintech_ledger-build \
@@ -119,8 +119,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{AKIA6CSK2GGGS3NQ3Y4H}}
-          aws-secret-access-key: ${{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}}
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: ${{ inputs.REGION || 'ap-south-1' }}
 
       # -----------------------------

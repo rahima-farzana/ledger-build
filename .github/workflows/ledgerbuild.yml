@@ -137,7 +137,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ inputs.ECRURL || '081654307023.dkr.ecr.ap-south-1.amazonaws.com' }}
           REPOSITORY: ${{ inputs.APPREPO || 'wezvatechledger' }}
-          IMAGE_TAG: rel${{ github.run_number }}
+          IMAGE_TAG: fb${{ github.run_number }}
         run: |
           echo "Building Docker Image..."
           docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG .

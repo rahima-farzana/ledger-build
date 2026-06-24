@@ -102,7 +102,7 @@ jobs:
         continue-on-error: true
         if: github.ref == 'refs/heads/main'
         env:
-          SONAR_TOKEN: ${{ secrets.sonarcloud }}
+          SONAR_TOKEN: ${{secrets.sonarcloud}}
         run: |
           mvn sonar:sonar \
             -Dsonar.projectKey=wezva-fintech_ledger-build \
@@ -119,8 +119,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: ${{ inputs.REGION || 'ap-south-1' }}
 
       # -----------------------------
@@ -137,7 +137,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ inputs.ECRURL || '081654307023.dkr.ecr.ap-south-1.amazonaws.com' }}
           REPOSITORY: ${{ inputs.APPREPO || 'wezvatechledger' }}
-          IMAGE_TAG: rel${{ github.run_number }}
+          IMAGE_TAG: fb${{ github.run_number }}
         run: |
           echo "Building Docker Image..."
           docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG .

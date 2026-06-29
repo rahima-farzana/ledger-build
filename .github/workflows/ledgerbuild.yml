@@ -135,7 +135,7 @@ jobs:
       # ----------------------------- 
       - name: Build and Push Docker Image
         env:
-          ECR_REGISTRY: ${{ inputs.ECRURL || '081654307023.dkr.ecr.ap-south-1.amazonaws.com' }}
+          ECR_REGISTRY: ${{ inputs.ECRURL || '967598289293.dkr.ecr.ap-south-1.amazonaws.com' }}
           REPOSITORY: ${{ inputs.APPREPO || 'wezvatechledger' }}
           IMAGE_TAG: rel${{ github.run_number }}
         run: |

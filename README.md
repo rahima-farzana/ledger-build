@@ -1,5 +1,5 @@
 # Spring Boot + MySQL example - WEZVA TECHNOLOGIES | ADAM | 9739110917
-# Sample commit - 09
+# Sample commit - 10
 
 ## Technologies used:
 * Spring Boot 3.1.2
